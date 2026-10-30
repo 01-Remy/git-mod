@@ -42,6 +42,3 @@ claude plugin install git-mod --marketplace 01-Remy/git-mod
 
 Dans l'app desktop : bouton + à côté de la zone de saisie, puis Plugins, Add marketplace avec `01-Remy/git-mod`,
 puis Add plugin.
-
-Si le dépôt est privé, l'installation ne marche que pour quelqu'un qui peut le lire sur GitHub et dont la machine
-a déjà un accès git à github.com (une clé SSH, ou `gh auth login` puis `gh auth setup-git`).
