@@ -1,7 +1,7 @@
-# git-mod2
+# git-mod
 
 Un mod Claude Code qui ajoute un panneau pour gérer d'un coup les branches de tous les dépôts git d'un dossier
-(par exemple `/var/www`). La commande `/git-mod2` ouvre le panneau.
+(par exemple `/var/www`). La commande `/git-mod` ouvre le panneau.
 
 ## Ce qu'il fait
 
@@ -31,13 +31,13 @@ Tout se règle dans le panneau (bouton « ⚙ Réglages ») et est gardé d'une 
 Dans une session Claude Code en terminal :
 
 ```
-/plugin install git-mod2 --marketplace 01-Remy/git-mod
+/plugin install git-mod --marketplace 01-Remy/git-mod
 ```
 
 Depuis un shell :
 
 ```bash
-claude plugin install git-mod2 --marketplace 01-Remy/git-mod
+claude plugin install git-mod --marketplace 01-Remy/git-mod
 ```
 
 Dans l'app desktop : bouton + à côté de la zone de saisie, puis Plugins, Add marketplace avec `01-Remy/git-mod`,

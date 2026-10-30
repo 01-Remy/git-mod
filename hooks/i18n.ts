@@ -1,10 +1,10 @@
 import type { Lang } from '../types'
 
 const fr = {
-  title: 'Git mod 2',
+  title: 'Git mod',
   intro: 'Gère d\'un coup les branches de tous les dépôts git du dossier configuré. Le résultat de chaque action s\'affiche en bas du panneau.',
-  opened: 'Panneau « Git mod 2 » ouvert.',
-  commandDescription: 'Ouvre le panneau Git mod 2 (branches, pull, nettoyage des dépôts)',
+  opened: 'Panneau « Git mod » ouvert.',
+  commandDescription: 'Ouvre le panneau Git mod (branches, pull, nettoyage des dépôts)',
   help: '? Aide',
   hideHelp: '? Masquer l\'aide',
   settings: '⚙ Réglages',
@@ -103,10 +103,10 @@ const fr = {
 type Texts = typeof fr
 
 const en: Texts = {
-  title: 'Git mod 2',
+  title: 'Git mod',
   intro: 'Manages the branches of every git repository in the configured folder at once. Each action\'s result shows at the bottom of the pane.',
-  opened: '“Git mod 2” pane opened.',
-  commandDescription: 'Opens the Git mod 2 pane (branches, pull, repository cleanup)',
+  opened: '“Git mod” pane opened.',
+  commandDescription: 'Opens the Git mod pane (branches, pull, repository cleanup)',
   help: '? Help',
   hideHelp: '? Hide help',
   settings: '⚙ Settings',

@@ -51,6 +51,6 @@ export type View = {
 
 declare module 'claude-code' {
   interface PluginState {
-    'git-mod2': { config: Shaped<Config>; run: Shaped<Run>; view: Shaped<View> }
+    'git-mod': { config: Shaped<Config>; run: Shaped<Run>; view: Shaped<View> }
   }
 }

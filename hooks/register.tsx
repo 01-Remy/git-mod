@@ -4,7 +4,7 @@ import type { EngineInterface, Register } from 'claude-code'
 import type { Cleanup, Config, RepoConf, Row, Run, View } from '../types'
 import { texts } from './i18n'
 
-const PANE = 'git-mod2'
+const PANE = 'git-mod'
 const STORE_KEY = 'config'
 // Pas de « - » en tête (git le lirait comme une option) ni de « .. ».
 const BRANCH_NAME = /^(?!-)(?!.*\.\.)[\w./-]+$/
@@ -18,9 +18,9 @@ const IDLE: Run = { action: '', status: 'idle', finishedAt: '', message: '', row
 const DEFAULT_VIEW: View = { screen: 'actions', isHelpShown: false, editing: '', isAlignAsked: false }
 
 // Change le tag quand une forme change : l'ancien état stocké est alors ignoré.
-const config = atom({ plugin: 'git-mod2', key: 'config' } as const, DEFAULT_CONFIG, { shape: 'config-1' })
-const run = atom({ plugin: 'git-mod2', key: 'run' } as const, IDLE, { shape: 'run-1' })
-const view = atom({ plugin: 'git-mod2', key: 'view' } as const, DEFAULT_VIEW, { shape: 'view-1' })
+const config = atom({ plugin: 'git-mod', key: 'config' } as const, DEFAULT_CONFIG, { shape: 'config-1' })
+const run = atom({ plugin: 'git-mod', key: 'run' } as const, IDLE, { shape: 'run-1' })
+const view = atom({ plugin: 'git-mod', key: 'view' } as const, DEFAULT_VIEW, { shape: 'view-1' })
 
 const now = () => new Date().toLocaleString('fr-FR')
 const stamp = () => new Date().toISOString().slice(0, 19).replace(/[-:]/g, '').replace('T', '-')
@@ -109,7 +109,7 @@ const stashCount = async ($: EngineInterface, path: string) =>
 const stashLocal = async ($: EngineInterface, repo: RepoConf) => {
   if (!repo.keepsLocal || !(await dirtyCount($, repo.path))) return false
   const before = await stashCount($, repo.path)
-  await git($, repo.path, 'stash', 'push', '-q', '-m', 'git-mod2 modifs locales')
+  await git($, repo.path, 'stash', 'push', '-q', '-m', 'git-mod modifs locales')
   return (await stashCount($, repo.path)) > before
 }
 
@@ -445,12 +445,12 @@ export const register: Register = on => {
     // Les réglages vivent dans $.store (d'une session à l'autre) et sont recopiés dans l'état pour l'affichage.
     const saved = (await $.store.get(STORE_KEY)) as Partial<Config> | undefined
     if (saved && Array.isArray(saved.repos)) await update($, config, () => ({ ...DEFAULT_CONFIG, ...saved }))
-    await $.command.register({ name: 'git-mod2', description: texts(saved?.lang ?? 'fr').commandDescription })
+    await $.command.register({ name: 'git-mod', description: texts(saved?.lang ?? 'fr').commandDescription })
 
     return next(e)
   })
 
-  on('command.run', { command: 'git-mod2' }, async $ => {
+  on('command.run', { command: 'git-mod' }, async $ => {
     const t = await t$($)
     await $.ui.open({ id: PANE, title: t.title })
     if ((await read($, config)).repos.length) void showStatus($)

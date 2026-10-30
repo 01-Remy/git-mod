@@ -1,5 +1,5 @@
 {
   "name": "git-mod",
   "owner": { "name": "01-Remy" },
-  "plugins": [{ "name": "git-mod2", "source": "./" }]
+  "plugins": [{ "name": "git-mod", "source": "./" }]
 }

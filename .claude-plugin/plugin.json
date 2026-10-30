@@ -1,5 +1,5 @@
 {
-  "name": "git-mod2",
+  "name": "git-mod",
   "version": "0.1.0",
   "description": "Panneau pour gérer d'un coup les branches de tous les dépôts git d'un dossier : branches par défaut, pull, bascule, nettoyage, alignement sur le serveur",
   "types": "./types/index.d.ts"
